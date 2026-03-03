@@ -45,7 +45,11 @@
       <!-- Controls -->
       <div class="controls">
         <div class="search-bar">
-          <input type="text" id="text" placeholder="Search transactions..." />
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search transactions..."
+          />
         </div>
         <button class="btn-add" id="openModal">+ Add Transaction</button>
       </div>
@@ -53,7 +57,7 @@
       <!-- Transaction List -->
       <div class="transaction-section">
         <div class="section-header">
-          <h2>Recent Transactions</h2>
+          <h3>Recent Transactions</h3>
           <div class="filter-btns">
             <button class="filter-btn active" data-filter="all">All</button>
             <button class="filter-btn" data-filter="income">Income</button>
@@ -71,7 +75,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h2>New Transaction</h2>
-          <button class="close-btn" id="close-btn">&times;</button>
+          <button class="close-btn" id="closeModal">&times;</button>
         </div>
         <form id="transaction-form">
           <div class="form-group">
@@ -113,7 +117,7 @@
           </div>
           <div class="form-group">
             <label for="category">Category</label>
-            <select>
+            <select id="category" name="category" required>
               <option value="salary">Salary</option>
               <option value="food">Food</option>
               <option value="entertainment">Entertainment</option>
@@ -122,7 +126,9 @@
               <option value="other">Other</option>
             </select>
           </div>
-          <button type="submit" class="btn-submit">Save Transaction</button>
+          <button type="submit" class="btn-submit btn-add">
+            Save Transaction
+          </button>
         </form>
       </div>
     </div>
